@@ -9,15 +9,16 @@
  */
 
 import React from 'react';
-import {SafeAreaView, StatusBar} from 'react-native';
-import MainScreen from './Screens/MainScreen/MainScreen';
+import {SafeAreaView, View} from 'react-native';
+import MainStack from './Navigation/MainStack';
 
-const App = () => {
+import MainScreen from './Screens/MainScreen/MainScreen';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
+const App: React.FC = () => {
   return (
-    <SafeAreaView>
-      <StatusBar barStyle={'light-content'} />
-      <MainScreen />
-    </SafeAreaView>
+    <SafeAreaProvider>
+      <MainStack />
+    </SafeAreaProvider>
   );
 };
 
