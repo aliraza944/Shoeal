@@ -22,6 +22,9 @@ const MainStack = () => {
             backgroundColor: 'white',
           },
           headerTintColor: 'black',
+          contentStyle: {
+            backgroundColor: 'white',
+          },
         })}>
         <Stack.Screen
           name="Home"
