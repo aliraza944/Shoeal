@@ -9,10 +9,9 @@
  */
 
 import React from 'react';
-import {SafeAreaView, View} from 'react-native';
+
 import MainStack from './Navigation/MainStack';
 
-import MainScreen from './Screens/MainScreen/MainScreen';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 const App: React.FC = () => {
   return (
