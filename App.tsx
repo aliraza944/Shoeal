@@ -15,11 +15,7 @@ import MainStack from './Navigation/MainStack/MainStack';
 
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 const App: React.FC = () => {
-  return (
-    <SafeAreaProvider>
-      <MainStack />
-    </SafeAreaProvider>
-  );
+  return <MainStack />;
 };
 
 export default App;
