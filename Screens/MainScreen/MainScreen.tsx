@@ -2,8 +2,7 @@
 import React from 'react';
 import {ImageBackground, StatusBar, Text, View} from 'react-native';
 import {styles} from './Styles';
-import {SafeAreaView} from 'react-native-safe-area-context';
-import CustomStatusbar from '../../Components/CustomStatusbar/CustomStatusbar';
+
 import {Images} from '../../assets/Data';
 const MainScreen: React.FC = () => {
   return (
