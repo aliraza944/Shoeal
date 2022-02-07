@@ -9,7 +9,8 @@ const MainScreen: React.FC = () => {
     <ImageBackground
       source={Images.backgroundImage}
       resizeMode="cover"
-      style={styles.container__main}>
+      style={styles.container__main}
+      testID="backgroundImage">
       <StatusBar hidden />
       <Text>Akram hayyat</Text>
     </ImageBackground>
