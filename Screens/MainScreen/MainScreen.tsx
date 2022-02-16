@@ -4,6 +4,7 @@ import {ImageBackground, StatusBar, Text, View} from 'react-native';
 import {styles} from './Styles';
 
 import {Images} from '../../assets/Data';
+// type StatusBarStyle = 'default' | 'light-content' | 'dark-content';
 const MainScreen: React.FC = () => {
   return (
     <ImageBackground
@@ -11,7 +12,11 @@ const MainScreen: React.FC = () => {
       resizeMode="cover"
       style={styles.container__main}
       testID="backgroundImage">
-      <StatusBar hidden />
+      <StatusBar
+        barStyle="dark-content"
+        translucent
+        backgroundColor="transparent"
+      />
       <Text>Akram hayyat</Text>
     </ImageBackground>
   );
