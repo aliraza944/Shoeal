@@ -4,7 +4,7 @@ import {ImageBackground, Image, StatusBar, Text, View} from 'react-native';
 import {styles} from './Styles';
 import Icons from 'react-native-vector-icons/FontAwesome';
 import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
-
+import SearchBar from '../../Components/SearchBar/SearchBar';
 import {Images} from '../../assets/Data';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 const MainScreen: React.FC = () => {
@@ -35,6 +35,7 @@ const MainScreen: React.FC = () => {
           style={styles.icon__cart}
         />
       </View>
+      <SearchBar />
     </ImageBackground>
   );
 };
