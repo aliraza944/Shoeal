@@ -1,11 +1,14 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
-import {ImageBackground, StatusBar, Text, View} from 'react-native';
+import {ImageBackground, Image, StatusBar, Text, View} from 'react-native';
 import {styles} from './Styles';
+import Icons from 'react-native-vector-icons/FontAwesome';
+import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import {Images} from '../../assets/Data';
-// type StatusBarStyle = 'default' | 'light-content' | 'dark-content';
+import {useSafeAreaInsets} from 'react-native-safe-area-context';
 const MainScreen: React.FC = () => {
+  const inset = useSafeAreaInsets();
   return (
     <ImageBackground
       source={Images.backgroundImage}
@@ -17,7 +20,21 @@ const MainScreen: React.FC = () => {
         translucent
         backgroundColor="transparent"
       />
-      <Text>Akram hayyat</Text>
+      <View
+        style={[
+          styles.container__menuIcons,
+          {
+            marginTop: 20 + inset.top,
+          },
+        ]}>
+        <Icons name="bars" color="black" size={25} />
+        <MaterialIcon
+          name="cart-outline"
+          color="white"
+          size={25}
+          style={styles.icon__cart}
+        />
+      </View>
     </ImageBackground>
   );
 };
