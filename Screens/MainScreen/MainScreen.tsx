@@ -36,6 +36,9 @@ const MainScreen: React.FC = () => {
         />
       </View>
       <SearchBar />
+      <View style={styles.container__title}>
+        <Text style={styles.text__title}>New Arrivals</Text>
+      </View>
     </ImageBackground>
   );
 };

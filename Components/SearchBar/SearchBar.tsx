@@ -6,7 +6,11 @@ import Icons from 'react-native-vector-icons/Ionicons';
 const SearchBar = () => {
   return (
     <View style={styles.container__main}>
-      <TextInput placeholder="Search" style={styles.input__search} />
+      <TextInput
+        placeholder="Search"
+        placeholderTextColor="#DFDFDF"
+        style={styles.input__search}
+      />
       <Icons name="ios-search-outline" size={20} color="#DFDFDF" />
     </View>
   );

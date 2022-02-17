@@ -21,4 +21,9 @@ export const styles = StyleSheet.create({
     borderRadius: 10,
     padding: 5,
   },
+  container__title: {},
+  text__title: {
+    // fontSize: 20,
+    fontFamily: 'Poppins-Bold',
+  },
 });
