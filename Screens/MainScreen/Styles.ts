@@ -7,8 +7,8 @@ export const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     alignItems: 'center',
     flex: 1,
-    paddingHorizontal: 20,
   },
+  container__scrollview: {width: '100%', paddingHorizontal: 20},
   container__menuIcons: {
     width: '100%',
     flexDirection: 'row',

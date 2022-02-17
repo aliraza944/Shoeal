@@ -1,14 +1,18 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable react-native/no-inline-styles */
 import React, {useState, useCallback, useRef} from 'react';
-import {Text, View, Dimensions} from 'react-native';
+import {Text, View, Dimensions, Image} from 'react-native';
 
 import Carousel from 'react-native-snap-carousel';
+import {newArrivalCarousel} from '../../../assets/Data';
 import {styles} from './Styles';
+import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 const windowWidth = Dimensions.get('window').width;
 interface ItemProps {
+  image: HTMLImageElement;
   title: string;
-  text: string;
+
+  price: number;
 }
 
 interface CustomCarouselProps {}
@@ -17,39 +21,30 @@ interface RenderItemProps {
   index: number;
 }
 
-const exampleItems = [
-  {
-    title: 'Item 1',
-    text: 'Text 1',
-  },
-  {
-    title: 'Item 2',
-    text: 'Text 2',
-  },
-  {
-    title: 'Item 3',
-    text: 'Text 3',
-  },
-  {
-    title: 'Item 4',
-    text: 'Text 4',
-  },
-  {
-    title: 'Item 5',
-    text: 'Text 5',
-  },
-];
-
 const NewArrivalCard: React.FC<CustomCarouselProps> = () => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
-  const [carouselItems, setCarouselItems] = useState<ItemProps[]>(exampleItems);
+  const [carouselItems, setCarouselItems] =
+    useState<ItemProps[]>(newArrivalCarousel);
   const ref = useRef(null);
 
   const renderItem = useCallback(({item, index}: RenderItemProps) => {
     return (
       <View style={styles.container__main}>
-        <Text style={{fontSize: 30}}>{item.title}</Text>
-        <Text>{item.text}</Text>
+        <View style={styles.container__image}>
+          <Image source={item.image} style={styles.image__shoe} />
+        </View>
+        <View style={styles.container__content}>
+          <Text style={styles.text__title}>{item.title}</Text>
+          <View style={styles.container__pricecarticon}>
+            <Text style={styles.text__price}>${`${item.price} `}</Text>
+            <MaterialIcon
+              name="cart-arrow-down"
+              color="white"
+              size={15}
+              style={styles.icon__cart}
+            />
+          </View>
+        </View>
       </View>
     );
   }, []);
@@ -60,7 +55,7 @@ const NewArrivalCard: React.FC<CustomCarouselProps> = () => {
       ref={ref}
       data={carouselItems}
       sliderWidth={windowWidth}
-      itemWidth={200}
+      itemWidth={150}
       renderItem={renderItem}
       onSnapToItem={(index: number) => setActiveIndex(index)}
       layoutCardOffset={500}
