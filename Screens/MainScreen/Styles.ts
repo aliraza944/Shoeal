@@ -22,21 +22,8 @@ export const styles = StyleSheet.create({
     borderRadius: 10,
     padding: 5,
   },
-  container__title: {
+  container__moreSneaker: {
     width: '100%',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
-  text__title: {
-    fontSize: 18,
-    fontFamily: fonts.regular,
-    color: '#233567',
-  },
-  text__subTitle: {
-    fontFamily: fonts.thin,
-    color: 'white',
-    textDecorationLine: 'underline',
-    fontSize: 12,
+    marginTop: 100,
   },
 });

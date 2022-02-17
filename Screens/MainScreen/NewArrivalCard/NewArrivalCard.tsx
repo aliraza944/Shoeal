@@ -63,6 +63,7 @@ const NewArrivalCard: React.FC<CustomCarouselProps> = () => {
       activeSlideAlignment="start"
       activeAnimationType="timing"
       inactiveSlideShift={0}
+      inactiveSlideOpacity={1}
     />
   );
 };

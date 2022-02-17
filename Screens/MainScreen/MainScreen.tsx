@@ -16,6 +16,7 @@ import {Images} from '../../assets/Data';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
 import NewArrivalCard from './NewArrivalCard/NewArrivalCard';
+import SectionHeader from '../../Components/SectionHeader/SectionHeader';
 
 const MainScreen: React.FC = () => {
   const inset = useSafeAreaInsets();
@@ -47,11 +48,12 @@ const MainScreen: React.FC = () => {
           />
         </View>
         <SearchBar />
-        <View style={styles.container__title}>
-          <Text style={styles.text__title}>New Arrivals</Text>
-          <Text style={styles.text__subTitle}>See All</Text>
-        </View>
+        <SectionHeader title="New Arrival" subTitle="See All" />
         <NewArrivalCard />
+
+        <View style={styles.container__moreSneaker}>
+          <SectionHeader title="More Sneaker" subTitle="See All" />
+        </View>
       </ScrollView>
     </ImageBackground>
   );
