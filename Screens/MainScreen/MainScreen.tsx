@@ -5,8 +5,10 @@ import {styles} from './Styles';
 import Icons from 'react-native-vector-icons/FontAwesome';
 import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import SearchBar from '../../Components/SearchBar/SearchBar';
-import {Images} from '../../assets/Data';
+import {Images, newArrivalCarousel} from '../../assets/Data';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
+import Carousel from 'react-native-snap-carousel';
+import NewArrivalCard from './NewArrivalCard/NewArrivalCard';
 const MainScreen: React.FC = () => {
   const inset = useSafeAreaInsets();
   return (
@@ -40,6 +42,7 @@ const MainScreen: React.FC = () => {
         <Text style={styles.text__title}>New Arrivals</Text>
         <Text style={styles.text__subTitle}>See All</Text>
       </View>
+      <NewArrivalCard />
     </ImageBackground>
   );
 };
