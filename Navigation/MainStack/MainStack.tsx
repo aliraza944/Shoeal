@@ -5,7 +5,15 @@ import {NavigationContainer} from '@react-navigation/native';
 import MainScreen from '../../Screens/MainScreen/MainScreen';
 import DetailScreen from '../../Screens/DetailScreen/DetailScreen';
 
-const Stack = createNativeStackNavigator();
+import type {NativeStackScreenProps} from '@react-navigation/native-stack';
+export type RootStackParams = {
+  Home: undefined;
+  DetailScreen: undefined;
+};
+
+export type Prop = NativeStackScreenProps<RootStackParams>;
+
+const Stack = createNativeStackNavigator<RootStackParams>();
 const MainStack = () => {
   return (
     <NavigationContainer>
@@ -32,7 +40,7 @@ const MainStack = () => {
           options={{headerShown: false}}
         />
         <Stack.Screen
-          name="Detail Screen"
+          name="DetailScreen"
           component={DetailScreen}
           options={{headerShown: false}}
         />

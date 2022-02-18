@@ -19,8 +19,11 @@ import NewArrivalCard from './NewArrivalCard/NewArrivalCard';
 import SectionHeader from '../../Components/SectionHeader/SectionHeader';
 import MoreSneakersCard from './MoreSneakersCard/MoreSneakersCard';
 import {moreSneakerCardData} from '../../assets/Data';
-const MainScreen: React.FC = () => {
+import {useNavigation} from '@react-navigation/native';
+import {Prop} from '../../Navigation/MainStack/MainStack';
+const MainScreen: React.FC<Prop> = ({route, navigation}) => {
   const inset = useSafeAreaInsets();
+
   return (
     <ImageBackground
       source={Images.backgroundImage}
@@ -50,7 +53,7 @@ const MainScreen: React.FC = () => {
         </View>
         <SearchBar />
         <SectionHeader title="New Arrival" subTitle="See All" />
-        <NewArrivalCard />
+        <NewArrivalCard navigation={navigation} />
 
         <View style={styles.container__moreSneaker}>
           <SectionHeader title="More Sneaker" subTitle="See All" />

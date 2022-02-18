@@ -1,12 +1,14 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable react-native/no-inline-styles */
 import React, {useState, useCallback, useRef} from 'react';
-import {Text, View, Dimensions, Image} from 'react-native';
+import {Text, View, Dimensions, Image, TouchableOpacity} from 'react-native';
 
 import Carousel from 'react-native-snap-carousel';
 import {newArrivalCarousel} from '../../../assets/Data';
 import {styles} from './Styles';
 import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
+
+import {Prop} from '../../../Navigation/MainStack/MainStack';
 const windowWidth = Dimensions.get('window').width;
 interface ItemProps {
   image: HTMLImageElement;
@@ -15,13 +17,15 @@ interface ItemProps {
   price: number;
 }
 
-interface CustomCarouselProps {}
+interface CustomCarouselProps {
+  navigation: Prop['navigation'];
+}
 interface RenderItemProps {
   item: ItemProps;
   index: number;
 }
 
-const NewArrivalCard: React.FC<CustomCarouselProps> = () => {
+const NewArrivalCard: React.FC<CustomCarouselProps> = ({navigation}) => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const [carouselItems, setCarouselItems] =
     useState<ItemProps[]>(newArrivalCarousel);
@@ -29,7 +33,9 @@ const NewArrivalCard: React.FC<CustomCarouselProps> = () => {
 
   const renderItem = useCallback(({item, index}: RenderItemProps) => {
     return (
-      <View style={styles.container__main}>
+      <TouchableOpacity
+        style={styles.container__main}
+        onPress={() => navigation.navigate('DetailScreen')}>
         <View style={styles.container__image}>
           <Image source={item.image} style={styles.image__shoe} />
         </View>
@@ -45,7 +51,7 @@ const NewArrivalCard: React.FC<CustomCarouselProps> = () => {
             />
           </View>
         </View>
-      </View>
+      </TouchableOpacity>
     );
   }, []);
 
