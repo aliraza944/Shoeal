@@ -46,7 +46,7 @@ const NewArrivalCard: React.FC<CustomCarouselProps> = ({navigation}) => {
             <MaterialIcon
               name="cart-arrow-down"
               color="white"
-              size={15}
+              size={18}
               style={styles.icon__cart}
             />
           </View>
