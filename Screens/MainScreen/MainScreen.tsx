@@ -19,7 +19,7 @@ import NewArrivalCard from './NewArrivalCard/NewArrivalCard';
 import SectionHeader from '../../Components/SectionHeader/SectionHeader';
 import MoreSneakersCard from './MoreSneakersCard/MoreSneakersCard';
 import {moreSneakerCardData} from '../../assets/Data';
-import {useNavigation} from '@react-navigation/native';
+
 import {Prop} from '../../Navigation/MainStack/MainStack';
 const MainScreen: React.FC<Prop> = ({route, navigation}) => {
   const inset = useSafeAreaInsets();

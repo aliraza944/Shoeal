@@ -8,6 +8,7 @@ import shoe3 from './Images/shoe3.png';
 import shoe4 from './Images/shoe4.png';
 import more1 from './Images/more1.png';
 import more2 from './Images/more2.png';
+import detailscreen from './Images/detailscreen.png';
 export const Images = {
   backgroundImage,
   burgerMenu,
@@ -18,6 +19,7 @@ export const Images = {
   shoe4,
   more1,
   more2,
+  detailscreen,
 };
 
 export const fonts = {
