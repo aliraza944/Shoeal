@@ -5,19 +5,19 @@ import {fonts} from '../../../assets/Data';
 export const styles = StyleSheet.create({
   container__main: {
     backgroundColor: '#F8F8F8',
-    borderRadius: 5,
-    height: 150,
+    borderRadius: 20,
+    height: 200,
     padding: 10,
     marginLeft: 20,
     marginRight: 20,
     width: '90%',
     justifyContent: 'center',
     alignItems: 'center',
-    marginVertical: 20,
+    marginVertical: 10,
   },
   container__image: {
-    width: 100,
-    height: 100,
+    width: 120,
+    height: 120,
   },
   image__shoe: {
     width: '100%',

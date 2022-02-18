@@ -33,7 +33,7 @@ export const styles = StyleSheet.create({
   },
   text__title: {
     fontFamily: fonts.regular,
-    fontSize: 16,
+    fontSize: 14,
     color: 'white',
   },
   container__priceIcons: {
@@ -44,7 +44,7 @@ export const styles = StyleSheet.create({
   },
   text__price: {
     fontFamily: fonts.regular,
-    fontSize: 16,
+    fontSize: 14,
     color: 'white',
   },
   container__icons: {
