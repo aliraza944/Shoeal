@@ -54,15 +54,17 @@ const MainScreen: React.FC = () => {
 
         <View style={styles.container__moreSneaker}>
           <SectionHeader title="More Sneaker" subTitle="See All" />
-          {moreSneakerCardData.map(item => (
-            <MoreSneakersCard
-              key={item.title}
-              backgroundColor={item.backgroundColor}
-              title={item.title}
-              price={item.price}
-              image={item.image}
-            />
-          ))}
+          <View style={styles.container__cards__moresneakers}>
+            {moreSneakerCardData.map(item => (
+              <MoreSneakersCard
+                key={item.title}
+                backgroundColor={item.backgroundColor}
+                title={item.title}
+                price={item.price}
+                image={item.image}
+              />
+            ))}
+          </View>
         </View>
       </ScrollView>
     </ImageBackground>

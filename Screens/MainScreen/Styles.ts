@@ -24,6 +24,10 @@ export const styles = StyleSheet.create({
   },
   container__moreSneaker: {
     width: '100%',
-    marginTop: 100,
+    marginTop: 50,
+  },
+  container__cards__moresneakers: {
+    width: '100%',
+    flexDirection: 'row',
   },
 });
