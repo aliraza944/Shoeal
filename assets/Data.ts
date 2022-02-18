@@ -6,7 +6,8 @@ import shoe1 from './Images/shoe1.png';
 import shoe2 from './Images/shoe2.png';
 import shoe3 from './Images/shoe3.png';
 import shoe4 from './Images/shoe4.png';
-import cart from './Images/cart.svg';
+import more1 from './Images/more1.png';
+import more2 from './Images/more2.png';
 export const Images = {
   backgroundImage,
   burgerMenu,
@@ -15,7 +16,8 @@ export const Images = {
   shoe2,
   shoe3,
   shoe4,
-  cart,
+  more1,
+  more2,
 };
 
 export const fonts = {
@@ -53,5 +55,27 @@ export const newArrivalCarousel = [
     title: 'Nike Jordans',
 
     price: 152,
+  },
+];
+
+export interface IMoreCardData {
+  image: HTMLImageElement;
+  title: string;
+  price: number;
+  backgroundColor: string;
+}
+
+export const moreSneakerCardData: IMoreCardData[] = [
+  {
+    image: more1,
+    title: 'Nike 270',
+    price: 75,
+    backgroundColor: '#FF8278',
+  },
+  {
+    image: more2,
+    title: 'Nike Air',
+    price: 56,
+    backgroundColor: '#F5AF65',
   },
 ];

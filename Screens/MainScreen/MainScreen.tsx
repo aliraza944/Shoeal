@@ -17,7 +17,8 @@ import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
 import NewArrivalCard from './NewArrivalCard/NewArrivalCard';
 import SectionHeader from '../../Components/SectionHeader/SectionHeader';
-
+import MoreSneakersCard from './MoreSneakersCard/MoreSneakersCard';
+import {moreSneakerCardData} from '../../assets/Data';
 const MainScreen: React.FC = () => {
   const inset = useSafeAreaInsets();
   return (
@@ -53,6 +54,15 @@ const MainScreen: React.FC = () => {
 
         <View style={styles.container__moreSneaker}>
           <SectionHeader title="More Sneaker" subTitle="See All" />
+          {moreSneakerCardData.map(item => (
+            <MoreSneakersCard
+              key={item.title}
+              backgroundColor={item.backgroundColor}
+              title={item.title}
+              price={item.price}
+              image={item.image}
+            />
+          ))}
         </View>
       </ScrollView>
     </ImageBackground>
