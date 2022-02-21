@@ -16,19 +16,29 @@ import Animated, {
 } from 'react-native-reanimated';
 
 const DetailScreen: React.FC<Prop> = ({navigation}) => {
-  const offset = useSharedValue(0);
-  const scale = useSharedValue(0);
+  const width = useSharedValue(0);
+  const height = useSharedValue(-45);
 
+  const heightStyle = useAnimatedStyle(() => {
+    return {
+      transform: [{rotateZ: `${height.value}deg`}],
+    };
+  });
   const style = useAnimatedStyle(() => {
     return {
-      opacity: offset.value,
-      transform: [{scale: scale.value}],
+      width: width.value,
     };
   }, []);
   useEffect(() => {
-    offset.value = withTiming(1, {duration: 5000});
-    scale.value = withTiming(1, {duration: 5000});
-  }, [offset, scale]);
+    width.value = withTiming(180, {
+      duration: 1000,
+      easing: Easing.ease,
+    });
+    height.value = withTiming(0, {
+      duration: 1000,
+      easing: Easing.ease,
+    });
+  }, [width, height]);
 
   return (
     <SafeAreaView>
@@ -49,9 +59,9 @@ const DetailScreen: React.FC<Prop> = ({navigation}) => {
           </Text>
         </View>
         <View style={styles.container__image__content}>
-          <View style={styles.container__image}>
-            <Image source={Images.detailscreen} style={styles.image__shoe} />
-          </View>
+          <Animated.View style={[styles.container__image, heightStyle]}>
+            <Image source={Images.detailscreen} style={[styles.image__shoe]} />
+          </Animated.View>
           <Animated.View style={[styles.container__background, style]}>
             <View style={styles.container__icons}>
               <Icons
