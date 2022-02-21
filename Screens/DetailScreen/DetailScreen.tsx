@@ -6,17 +6,20 @@ import {styles} from './Styles';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import Icons from 'react-native-vector-icons/MaterialCommunityIcons';
 import {Images} from '../../assets/Data';
-const DetailScreen: React.FC = () => {
+import {Prop} from '../../Navigation/MainStack/MainStack';
+const DetailScreen: React.FC<Prop> = ({navigation}) => {
   return (
     <SafeAreaView>
       <ScrollView contentContainerStyle={styles.container__main}>
         <StatusBar barStyle="dark-content" backgroundColor={'white'} />
-        <Icons
-          name="chevron-left"
-          size={20}
-          color="#FF8278"
-          style={styles.icon__left}
-        />
+        <TouchableOpacity onPress={() => navigation.goBack()}>
+          <Icons
+            name="chevron-left"
+            size={20}
+            color="#FF8278"
+            style={styles.icon__left}
+          />
+        </TouchableOpacity>
         <View style={styles.container__title}>
           <Text style={styles.text__title}>Nike Air Force 270</Text>
           <Text style={styles.text__subtitle}>
