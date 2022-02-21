@@ -1,5 +1,6 @@
 package com.shoeal;
 
+
 import android.app.Application;
 import android.content.Context;
 import com.facebook.react.PackageList;
@@ -7,8 +8,10 @@ import com.facebook.react.ReactApplication;
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
+import com.facebook.react.bridge.JSIModulePackage; 
 import com.facebook.soloader.SoLoader;
 import java.lang.reflect.InvocationTargetException;
+import com.swmansion.reanimated.ReanimatedJSIModulePackage;
 import java.util.List;
 
 public class MainApplication extends Application implements ReactApplication {
@@ -33,6 +36,10 @@ public class MainApplication extends Application implements ReactApplication {
         protected String getJSMainModuleName() {
           return "index";
         }
+         @Override
+      protected JSIModulePackage getJSIModulePackage() {
+        return new ReanimatedJSIModulePackage(); // <- add
+      }
       };
 
   @Override

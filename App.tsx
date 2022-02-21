@@ -12,7 +12,7 @@
 import React from 'react';
 
 import MainStack from './Navigation/MainStack/MainStack';
-
+import 'react-native-gesture-handler';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 const App: React.FC = () => {
   return (

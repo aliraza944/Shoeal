@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Image, StatusBar, Text, TouchableOpacity, View} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 import {styles} from './Styles';
@@ -7,7 +7,29 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 import Icons from 'react-native-vector-icons/MaterialCommunityIcons';
 import {Images} from '../../assets/Data';
 import {Prop} from '../../Navigation/MainStack/MainStack';
+
+import Animated, {
+  useSharedValue,
+  useAnimatedStyle,
+  withTiming,
+  Easing,
+} from 'react-native-reanimated';
+
 const DetailScreen: React.FC<Prop> = ({navigation}) => {
+  const offset = useSharedValue(0);
+  const scale = useSharedValue(0);
+
+  const style = useAnimatedStyle(() => {
+    return {
+      opacity: offset.value,
+      transform: [{scale: scale.value}],
+    };
+  }, []);
+  useEffect(() => {
+    offset.value = withTiming(1, {duration: 5000});
+    scale.value = withTiming(1, {duration: 5000});
+  }, [offset, scale]);
+
   return (
     <SafeAreaView>
       <ScrollView contentContainerStyle={styles.container__main}>
@@ -30,7 +52,7 @@ const DetailScreen: React.FC<Prop> = ({navigation}) => {
           <View style={styles.container__image}>
             <Image source={Images.detailscreen} style={styles.image__shoe} />
           </View>
-          <View style={styles.container__background}>
+          <Animated.View style={[styles.container__background, style]}>
             <View style={styles.container__icons}>
               <Icons
                 name="heart"
@@ -45,7 +67,7 @@ const DetailScreen: React.FC<Prop> = ({navigation}) => {
                 style={styles.icon__image__container}
               />
             </View>
-          </View>
+          </Animated.View>
         </View>
         <Text style={styles.text__description}>
           Lorem Ipsum is simply dummy text of the printing and typesetting
