@@ -29,8 +29,18 @@ const DetailScreen: React.FC = () => {
           </View>
           <View style={styles.container__background}>
             <View style={styles.container__icons}>
-              <Icons name="heart" size={25} color="red" />
-              <Icons name="share" size={25} color="#233567" />
+              <Icons
+                name="heart"
+                size={27}
+                color="red"
+                style={styles.icon__image__container}
+              />
+              <Icons
+                name="share"
+                size={27}
+                color="#233567"
+                style={styles.icon__image__container}
+              />
             </View>
           </View>
         </View>

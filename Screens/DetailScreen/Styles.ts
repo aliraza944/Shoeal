@@ -41,11 +41,19 @@ export const styles = StyleSheet.create({
     backgroundColor: '#F5AF65',
     borderTopLeftRadius: 40,
     borderBottomLeftRadius: 40,
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     alignItems: 'center',
   },
   container__icons: {
     marginLeft: 60,
+    marginVertical: 20,
+    height: 70,
+    justifyContent: 'space-between',
+  },
+  icon__image__container: {
+    backgroundColor: '#F7DBD8',
+    padding: 2,
+    borderRadius: 10,
   },
   container__image: {
     width: 250,
