@@ -9,12 +9,16 @@
  * @format
  */
 
-import React from 'react';
-
+import React, {useEffect} from 'react';
+import SplashScreen from 'react-native-splash-screen';
 import MainStack from './Navigation/MainStack/MainStack';
 import 'react-native-gesture-handler';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 const App: React.FC = () => {
+  useEffect(() => {
+    SplashScreen.hide();
+  }, []);
+
   return (
     <SafeAreaProvider>
       <MainStack />
